@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=fontawesomefx-8.9.jar -DgroupId=de.jensd -DartifactId=fontawesomefx -Dversion=8.9 -Dpackaging=jar -DgeneratePom=true

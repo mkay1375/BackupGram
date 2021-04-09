@@ -1,0 +1,36 @@
+.list-view {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.list-view .scroll-bar:horizontal {
+    -fx-scale-x: 0;
+}
+
+.button {
+    -fx-cursor: HAND;
+}
+
+.button:hover {
+    -fx-opacity: .7;
+}
+
+.btn-primary {
+    -fx-text-fill: white;
+    -fx-background-color: #007bff;
+}
+
+.btn-warning {
+    -fx-text-fill: #212529;
+    -fx-background-color: #ffc107;
+}
+
+.btn-danger {
+    -fx-text-fill: white;
+    -fx-background-color: #dc3545;
+}
+
+.btn-success {
+    -fx-text-fill: white;
+    -fx-background-color: #28a745;
+}

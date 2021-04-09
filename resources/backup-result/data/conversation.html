@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>BackupGram - Conversation</title>
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="conversation.css">
+</head>
+<body>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="display-4">BackupGram</div>
+    </div>
+</div>
+<header class="bg-white">
+    <h2 class="container">
+        <img id="current-conversation-image" style="width: 1em" src="image/contact.png">
+        <span id="current-conversation-name">Conversation Name</span>
+        <a class="btn btn-light" href="../index.html">Go Back to Conversations List</a>
+    </h2>
+    <hr>
+</header>
+
+<div class="container">
+    <div id="view-options" class="text-center">
+        <span>Sort by date:</span>
+        <div class="btn-group mb-1 mb-lg-0">
+            <button id="old-to-new" class="btn">Ascending</button>
+            <button id="new-to-old" class="btn">Descending</button>
+        </div>
+        <span class="ml-1">View Mode:</span>
+        <div class="btn-group">
+            <button id="continuous-mode" class="btn">Continuous</button>
+            <button id="page-mode" class="btn">Pagination</button>
+        </div>
+    </div>
+    <div id="pages" class="row mt-3">
+        <!-- pages links will be added here -->
+    </div>
+    <hr>
+    <div id="messages">
+        <!-- messages will be added here -->
+    </div>
+</div>
+
+<script src="data.js"></script>
+<script src="lib/jalali.js"></script>
+<script src="lib/jquery-3.3.1.slim.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/bootstrap.bundle.min.js"></script>
+<script src="lib/utils.js"></script>
+<script src="conversation.js"></script>
+</body>
+</html>

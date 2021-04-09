@@ -1,0 +1,52 @@
+.contact {
+    background-color: rgb(233, 236, 239);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.contact.in {
+    float: left;
+}
+
+.contact.out {
+    float: right;
+}
+
+.message-text {
+    word-wrap: break-word;
+}
+
+.message {
+    background-color: rgb(233, 236, 239);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: .5em 10px;
+}
+
+.message.in {
+    margin-left: 60px;
+}
+
+.message.out {
+    margin-right: 60px;
+}
+
+#view-options .btn {
+    width: 150px;
+}
+
+#view-options .btn.selected {
+    background-color: #38afe3;
+    color: white;
+}
+
+#view-options .btn:not(.selected):hover {
+    background-color: #2b7faa;
+    color: white;
+}

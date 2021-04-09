@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import ir.mkay.javafx.component.NumericTextField?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.152" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ir.mkay.backupgram.controller.MainController">
+   <children>
+      <GridPane VBox.vgrow="ALWAYS">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="350.0" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="350.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ListView fx:id="conversationsListView" fixedCellSize="50.0" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></ListView>
+                  <ListView fx:id="selectedConversationsListView" fixedCellSize="50.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></ListView>
+                  <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <!-- TODO (DELAYED) - BACKUP FILES: set prefHeight from 0 to 150 -->
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="0.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="addToBackupListButton" mnemonicParsing="false" onAction="#addToBackupList" prefWidth="200.0" styleClass="btn-primary" text="Add Conversation" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="removeFromBackupListButton" mnemonicParsing="false" onAction="#removeFromBackupList" prefWidth="200.0" styleClass="btn-danger" text="Remove Conversation" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <NumericTextField fx:id="backupCountTextField" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" promptText="Number of Messages" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip autoHide="true" text="حداکثر تعداد پیام جهت بکاپ از این مکالمه" textAlignment="RIGHT" />
+                           </tooltip>
+                        </NumericTextField>
+                        <ProgressIndicator fx:id="generalProgressIndicator" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="50.0" progress="0.0" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER" />
+                         <!-- TODO (DELAYED) - BACKUP FILES: remove visible=false -->
+                        <GridPane fx:id="downloadFilesGridPage" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="200.0" visible="false" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                          <columnConstraints>
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <CheckBox fx:id="imageCheckBox" mnemonicParsing="false" onAction="#toggleTextField" text="عکس">
+                                 <GridPane.margin>
+                                    <Insets right="10.0" />
+                                 </GridPane.margin>
+                                 <tooltip>
+                                    <Tooltip autoHide="true" text="گرفتن بکاپ از عکس های این مکالمه" textAlignment="RIGHT" />
+                                 </tooltip>
+                              </CheckBox>
+                              <CheckBox fx:id="videoCheckBox" mnemonicParsing="false" onAction="#toggleTextField" text="فیلم" GridPane.rowIndex="1">
+                                 <tooltip>
+                                    <Tooltip autoHide="true" text="گرفتن بکاپ از فیلم های این مکالمه" textAlignment="RIGHT" />
+                                 </tooltip></CheckBox>
+                              <CheckBox fx:id="fileCheckBox" mnemonicParsing="false" onAction="#toggleTextField" text="فایل" GridPane.rowIndex="3">
+                                 <tooltip>
+                                    <Tooltip autoHide="true" text="گرفتن بکاپ از فایل های این مکالمه" textAlignment="RIGHT" />
+                                 </tooltip></CheckBox>
+                              <TextField fx:id="imageMaxSizeTextField" alignment="CENTER" disable="true" promptText="حداکثر حجم (MB)" GridPane.columnIndex="1">
+                                 <tooltip>
+                                    <Tooltip autoHide="true" text="حداکثر حجم هر عکس" textAlignment="RIGHT" />
+                                 </tooltip></TextField>
+                              <TextField fx:id="videoMaxSizeTextField" alignment="CENTER" disable="true" promptText="حداکثر حجم (MB)" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <tooltip>
+                                    <Tooltip autoHide="true" text="حداکثر حجم هر فیلم" textAlignment="RIGHT" />
+                                 </tooltip></TextField>
+                              <TextField fx:id="fileMaxSizeTextField" alignment="CENTER" disable="true" promptText="حداکثر حجم (MB)" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <tooltip>
+                                    <Tooltip autoHide="true" text="حداکثر حجم هر فایل" textAlignment="RIGHT" />
+                                 </tooltip></TextField>
+                              <CheckBox fx:id="soundCheckBox" mnemonicParsing="false" onAction="#toggleTextField" text="صدا" GridPane.rowIndex="2">
+                                 <tooltip>
+                                    <Tooltip autoHide="true" text="گرفتن بکاپ از صداهای این مکالمه" textAlignment="RIGHT" />
+                                 </tooltip>
+                              </CheckBox>
+                              <TextField fx:id="soundMaxSizeTextField" alignment="CENTER" disable="true" promptText="حداکثر حجم (MB)" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <tooltip>
+                                    <Tooltip autoHide="true" text="حداکثر حجم هر صدا" textAlignment="RIGHT" />
+                                 </tooltip>
+                              </TextField>
+                           </children>
+                           <GridPane.margin>
+                              <Insets left="75.0" right="75.0" />
+                           </GridPane.margin>
+                        </GridPane>
+                        <FontAwesomeIconView fill="WHITE" glyphName="ANGLE_RIGHT" size="16" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="150.0" />
+                           </GridPane.margin>
+                        </FontAwesomeIconView>
+                        <FontAwesomeIconView fill="WHITE" glyphName="ANGLE_LEFT" size="16" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets right="150.0" />
+                           </GridPane.margin>
+                        </FontAwesomeIconView>
+                     </children>
+                  </GridPane>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Conversations List" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Backup List" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="conversationSearchTextField" alignment="CENTER" disable="true" onKeyReleased="#filterConversationList" promptText="Search in conversation titles" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="backupConversationSearchTextField" alignment="CENTER" disable="true" onKeyReleased="#filterBackupConversationList" promptText="Search in conversation titles" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <FontAwesomeIconView glyphName="SEARCH" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </FontAwesomeIconView>
+                  <FontAwesomeIconView glyphName="SEARCH" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="20.0" />
+                     </GridPane.margin>
+                  </FontAwesomeIconView>
+               </children>
+            </GridPane>
+            <GridPane GridPane.rowIndex="2">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="120.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="backupButton" mnemonicParsing="false" onAction="#backup" prefWidth="100.0" styleClass="btn-success" text="Backup!" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="chooseBackupPathButton" mnemonicParsing="false" onAction="#chooseBackupPath" styleClass="btn-primary" text="Choose Backup Path..." GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="backupPathTextField" promptText="Backup Path">
+                     <GridPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Button fx:id="cancelBackupButton" mnemonicParsing="false" onAction="#cancelBackup" prefWidth="100.0" styleClass="btn-danger" text="Stop" visible="false" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </GridPane>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BackupGram" GridPane.halignment="CENTER">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+            </Text>
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logout" prefWidth="100.0" styleClass="btn-warning" text="Logout" GridPane.halignment="RIGHT">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets right="10.0" />
+               </GridPane.margin>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
+</VBox>

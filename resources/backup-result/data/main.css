@@ -1,0 +1,51 @@
+@font-face {
+    font-family: Vazir-FD;
+    src: url(Vazir-FD.ttf);
+}
+
+/** {*/
+/*    font-family: Vazir-FD;*/
+/*}*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.jumbotron {
+    background: linear-gradient(to left, #38afe3, #1c93d2);
+    color: white;
+}
+
+.badge {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.rtl {
+    direction: rtl;
+}
+
+.date {
+    font-size: .8em;
+    font-weight: bold;
+    opacity: .5;
+}
+
+.default-cursor {
+    cursor: default !important;
+}
+
+.not-selectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
